@@ -1,4 +1,4 @@
-package Models;
+package dk.kea.dat19c.Library.java.Models;
 
 public class boegerDTO {
     private String titel;
