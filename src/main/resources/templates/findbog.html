@@ -20,7 +20,10 @@
     <form th:action="@{/findbog}" th:object="${bog}" method="post">
         <tr>
             <th>Indtast titel:</th>
+            <br>
             <input type="text" th:field="*{titel}" placeholder="Titel" />
+            <br>
+            <br>
             <input type="submit" value="Search"/>
         </tr>
     </form>
@@ -42,15 +45,24 @@
                 </tr>
                 <br>
                 <tr>
-                    <th>First name:</th>
+                    <th>Udgivelsesår:</th>
                     <span th:text="${bog.getUdgivelsesaar()}"></span>
                 </tr>
                 <br>
                 <tr>
-                    <th>Last name:</th>
+                    <th>ISBN:</th>
                     <span th:text="${bog.getISBN()}"></span>
                 </tr>
                 <br>
+
+                  <tr>
+                    <th>Udlåns status:</th>
+                    <span th:text="${bog.isUdlaansstatus()} ? 'Udlånt' : 'Ledig' "></span>
+                </tr>
+                <br>
+
+
+
 
 
 

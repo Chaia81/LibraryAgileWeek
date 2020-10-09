@@ -37,7 +37,10 @@ public class BoegerRepositoryImpl implements IBoegerRepository {
             while (rs.next()) {
                 customerToReturn = new BoegerDTO();
                 customerToReturn.setTitel(rs.getString("titel")); //her settes en variabel med det data der er modtaget fra databasen
-
+                customerToReturn.setForfatter(rs.getString(2));
+                customerToReturn.setUdgivelsesaar(rs.getInt(3));
+                customerToReturn.setISBN(rs.getString(4));
+                customerToReturn.setUdlaansstatus(rs.getBoolean(5));
             }
         } catch (SQLException s) {
             s.printStackTrace();

@@ -32,9 +32,10 @@ public class BoegerController {
     }
 
 
-    @PostMapping("/getBogByTitel")
+    @PostMapping("/findbog")
     public String getCustomerById(@ModelAttribute BoegerDTO boegerDTO, Model model) {
         BoegerDTO bogtest = iboegerrepository.read(boegerDTO.getTitel());
+
         model.addAttribute("bog", bogtest);
 
 
