@@ -3,17 +3,20 @@ package dk.kea.dat19c.Library.java.Models;
 public class boegerDTO {
     private String titel;
     private String forfatter;
-    private int year;
+    private int udgivelsesaar;
     private int ISBN;
-    private boolean status;
+    private boolean udlaansstatus;
 
-    public boegerDTO(String titel, String forfatter, int year, int ISBN, boolean status) {
+    public boegerDTO(String titel, String forfatter, int udgivelsesaar, int ISBN, boolean udlaansstatus) {
         this.titel = titel;
         this.forfatter = forfatter;
-        this.year = year;
+        this.udgivelsesaar = udgivelsesaar;
         this.ISBN = ISBN;
-        this.status = status;
+        this.udlaansstatus = udlaansstatus;
+
     }
+
+
 
     public String getTitel() {
         return titel;
@@ -31,12 +34,12 @@ public class boegerDTO {
         this.forfatter = forfatter;
     }
 
-    public int getYear() {
-        return year;
+    public int getUdgivelsesaar() {
+        return udgivelsesaar;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setUdgivelsesaar(int udgivelsesaar) {
+        this.udgivelsesaar = udgivelsesaar;
     }
 
     public int getISBN() {
@@ -47,12 +50,12 @@ public class boegerDTO {
         this.ISBN = ISBN;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isUdlaansstatus() {
+        return udlaansstatus;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setUdlaansstatus(boolean udlaansstatus) {
+        this.udlaansstatus = udlaansstatus;
     }
 
     @Override
@@ -60,9 +63,9 @@ public class boegerDTO {
         return "boegerDTO{" +
                 "titel='" + titel + '\'' +
                 ", forfatter='" + forfatter + '\'' +
-                ", year=" + year +
+                ", udgivelsesaar=" + udgivelsesaar +
                 ", ISBN=" + ISBN +
-                ", status=" + status +
+                ", udlaansstatus=" + udlaansstatus +
                 '}';
     }
 }
