@@ -9,7 +9,7 @@ public class boegerController {
 
 
     @GetMapping("/")
-    public String boeger(){
+    public String searchBoeger(){
         return "boeger";
     }
 
