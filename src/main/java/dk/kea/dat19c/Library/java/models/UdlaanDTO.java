@@ -60,4 +60,15 @@ public class UdlaanDTO {
     public void setAfleveringssato(Date afleveringssato) {
         this.afleveringssato = afleveringssato;
     }
+
+    @Override
+    public String toString() {
+        return "UdlaanDTO{" +
+                "cprNR=" + cprNR +
+                ", emnetal=" + emnetal +
+                ", ISBN='" + ISBN + '\'' +
+                ", udlånsdato=" + udlånsdato +
+                ", afleveringssato=" + afleveringssato +
+                '}';
+    }
 }

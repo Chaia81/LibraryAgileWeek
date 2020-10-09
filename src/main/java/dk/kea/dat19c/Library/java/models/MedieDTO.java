@@ -70,5 +70,17 @@ public class MedieDTO {
     public void setUdlånsstatus(boolean udlånsstatus) {
         this.udlånsstatus = udlånsstatus;
     }
+
+    @Override
+    public String toString() {
+        return "MedieDTO{" +
+                "titel='" + titel + '\'' +
+                ", kunster='" + kunster + '\'' +
+                ", udgivelseår=" + udgivelseår +
+                ", emnetal=" + emnetal +
+                ", medietype='" + medietype + '\'' +
+                ", udlånsstatus=" + udlånsstatus +
+                '}';
+    }
 }
 
