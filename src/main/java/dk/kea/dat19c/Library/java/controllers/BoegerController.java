@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -23,6 +24,8 @@ public class BoegerController {
 
     }
 
+    /*------------------------------------- Find bog ---------------------------------------------*/
+
     @GetMapping("/findbog")
     public String findBog(Model model) {
         // if(model.getAttribute("customer") == null) {
@@ -36,10 +39,24 @@ public class BoegerController {
     public String getCustomerById(@ModelAttribute BoegerDTO boegerDTO, Model model) {
         BoegerDTO bogtest = iboegerrepository.read(boegerDTO.getTitel());
         model.addAttribute("bog", bogtest);
-
-
         return "findbog";
 
     }
+        /*------------------------------------- Slet bog ---------------------------------------------*/
+
+        @GetMapping("/sletbog")
+        public String deleteBog(Model model, @RequestParam String titel){
+            BoegerDTO bog = iboegerrepository.read(titel);
+            model.addAttribute("boeger", bog);
+            return "sletbog";
+        }
+
+
+
+        @PostMapping("/sletbog")
+        public String deleteForGood(@RequestParam String titel){
+            iboegerrepository.delete(titel);
+            return "redirect:/index";
+        }
 }
 

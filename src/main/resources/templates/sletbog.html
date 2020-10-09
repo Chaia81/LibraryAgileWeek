@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Slet bog</title>
 </head>
+
 <body>
-$END$
+
+<header>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Startside</a></li>
+            <li><a href="/findbog">slet en bog</a></li>
+            <li><a href="/sletbog">Bla bla</a></li>
+            <li><a href="/bla bla">Bla bla</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Slet bog</h1>
+    <h2>Er du sikker på du vil slette?</h2>
+    <form th:action="@{sletbog}" method="post" th:object="${boeger}">
+        <input type="hidden" th:field="${boeger.titel}"/>
+        <tr>
+            <th>Titel:</th>
+            <span th:text="${boeger.getTitel()}"></span>
+        </tr>
+        <br>
+        <tr>
+            <th>Forfatter:</th>
+            <span th:text="${boeger.getForfatter()}"></span>
+        </tr>
+        <br>
+        <tr>
+            <th>Udgivelsesår:</th>
+            <span th:text="${boeger.getUdgivelsesaar()}"></span>
+        </tr>
+        <br>
+        <tr>
+            <th>ISBN:</th>
+            <span th:text="${boeger.getISBN()}"></span>
+        </tr>
+        <br>
+        <br>
+        <button type="submit" value="Submit" class="btn btn-del w">Delete</button>
+        <a href="/index" class="btn btn-details w" type="submit">No</a>
+    </form>
+</div>
 </body>
 </html>

@@ -15,7 +15,7 @@ public interface IBoegerRepository{
 
     public void edit(BoegerDTO boeger);
 
-    public void delete(int Id);
+    public void delete(String titel);
 
 
 
