@@ -17,6 +17,10 @@ public class UdlaanDTO {
         this.afleveringssato = afleveringssato;
     }
 
+    public UdlaanDTO() {
+
+    }
+
     public int getCprNR() {
         return cprNR;
     }
