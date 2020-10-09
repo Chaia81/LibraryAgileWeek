@@ -8,15 +8,19 @@ public class MedieDTO {
     private Date udgivelseår;
     private int emnetal;
     private String medietype;
-    private boolean status;
+    private boolean udlånsstatus;
 
-    public MedieDTO(String titel, String kunster, Date udgivelseår, int emnetal, String type, boolean status) {
+    public MedieDTO(String titel, String kunster, Date udgivelseår, int emnetal, String medietype, boolean udlånsstatus) {
         this.titel = titel;
         this.kunster = kunster;
         this.udgivelseår = udgivelseår;
         this.emnetal = emnetal;
-        this.medietype = type;
-        this.status = status;
+        this.medietype = medietype;
+        this.udlånsstatus = udlånsstatus;
+    }
+
+    public MedieDTO() {
+
     }
 
     public String getTitel() {
@@ -59,12 +63,12 @@ public class MedieDTO {
         this.medietype = type;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isUdlånsstatus() {
+        return udlånsstatus;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setUdlånsstatus(boolean udlånsstatus) {
+        this.udlånsstatus = udlånsstatus;
     }
 }
 
