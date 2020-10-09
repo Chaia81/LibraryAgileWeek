@@ -57,9 +57,21 @@
 
                   <tr>
                     <th>Udlåns status:</th>
-                    <span th:text="${bog.isUdlaansstatus()} ? 'Udlånt' : 'Ledig' "></span>
+                    <span th:text="${bog.isUdlaansstatus()} ? 'Ledig' : 'Udlånt' "></span>
+                   <span><div th:if="${bog.isUdlaansstatus()} ? 'Ledig' ">
+                       <br>
+                                    <input type="submit" value="Lån"/>
+                   </div>
+                   </span>
+
+
+                      <a th:href="@{/deletebog(titel=${bog.getTitel()})}"><button class="btn btn-del">Delete</button></a>
+
+
                 </tr>
                 <br>
+
+
 
 
 
