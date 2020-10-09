@@ -7,7 +7,7 @@ public class MedieDTO {
     private String kunster;
     private Date udgivelseår;
     private int emnetal;
-    private String type;
+    private String medietype;
     private boolean status;
 
     public MedieDTO(String titel, String kunster, Date udgivelseår, int emnetal, String type, boolean status) {
@@ -15,7 +15,7 @@ public class MedieDTO {
         this.kunster = kunster;
         this.udgivelseår = udgivelseår;
         this.emnetal = emnetal;
-        this.type = type;
+        this.medietype = type;
         this.status = status;
     }
 
@@ -51,12 +51,12 @@ public class MedieDTO {
         this.emnetal = emnetal;
     }
 
-    public String getType() {
-        return type;
+    public String getMedietype() {
+        return medietype;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setMedietype(String type) {
+        this.medietype = type;
     }
 
     public boolean isStatus() {
