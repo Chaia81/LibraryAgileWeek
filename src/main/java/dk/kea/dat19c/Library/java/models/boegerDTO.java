@@ -1,8 +1,8 @@
-package Models;
+package dk.kea.dat19c.Library.java.models;
 
-public class boegerDTO {
-    private String titel;
-    private String forfatter;
+public class laenerDTO {
+    private int CPR;
+    private String email;
     private int year;
     private int ISBN;
     private boolean status;
