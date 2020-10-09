@@ -1,19 +1,21 @@
 package dk.kea.dat19c.Library.java.repositories;
 
+import dk.kea.dat19c.Library.java.models.BoegerDTO;
+
 import java.util.List;
 
-public interface IBoegerRepository<T>  {
+public interface IBoegerRepository{
 
     // CRUD operations
-    public boolean create(T t);
+    public void create(BoegerDTO boegerDTO);
 
-    public T read(int id);
+    public BoegerDTO read(int Id);
 
-    public List<T> readAll();
+    public List<BoegerDTO> readAll();
 
-    public void edit(T t);
+    public void edit(BoegerDTO boeger);
 
-    public void delete(int id);
+    public void delete(int Id);
 
 
 
