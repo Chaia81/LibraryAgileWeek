@@ -1,13 +1,13 @@
 package dk.kea.dat19c.Library.java.models;
 
-public class boegerDTO {
+public class BoegerDTO {
     private String titel;
     private String forfatter;
     private int udgivelsesaar;
     private int ISBN;
     private boolean udlaansstatus;
 
-    public boegerDTO(String titel, String forfatter, int udgivelsesaar, int ISBN, boolean udlaansstatus) {
+    public BoegerDTO(String titel, String forfatter, int udgivelsesaar, int ISBN, boolean udlaansstatus) {
         this.titel = titel;
         this.forfatter = forfatter;
         this.udgivelsesaar = udgivelsesaar;

@@ -1,12 +1,12 @@
 package dk.kea.dat19c.Library.java.models;
 
-public class laanerDTO {
+public class LaanerDTO {
     private int CPR;
     private String email;
     private int telefonnummer;
     private int pinkode;
 
-    public laanerDTO(int CPR, String email, int telefonnummer, int pinkode) {
+    public LaanerDTO(int CPR, String email, int telefonnummer, int pinkode) {
         this.CPR = CPR;
         this.email = email;
         this.telefonnummer = telefonnummer;
