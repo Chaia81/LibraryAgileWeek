@@ -21,7 +21,7 @@ public class DatabaseConnectionManager {
 
         Properties prop = new Properties();
         try {
-            FileInputStream propertyFile = new FileInputStream("src/main/util/application.properties");
+            FileInputStream propertyFile = new FileInputStream("C:\\Users\\Amiliah\\IdeaProjects\\Tredjesemester\\LibraryAgileWeek\\src\\main\\java\\dk\\kea\\dat19c\\Library\\java\\util\\application.properties");
             prop.load(propertyFile);
             user = prop.getProperty("db.user");
             password = prop.getProperty("db.password");

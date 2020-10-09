@@ -54,8 +54,7 @@
                     <span th:text="${bog.getISBN()}"></span>
                 </tr>
                 <br>
-
-                  <tr>
+                <tr>
                     <th>Udlåns status:</th>
                     <span th:text="${bog.isUdlaansstatus()} ? 'Ledig' : 'Udlånt' "></span>
                    <span><div th:if="${bog.isUdlaansstatus()} ? 'Ledig' ">
@@ -63,10 +62,8 @@
                                     <input type="submit" value="Lån"/>
                    </div>
                    </span>
-
-
-                      <a th:href="@{/deletebog(titel=${bog.getTitel()})}"><button class="btn btn-del">Delete</button></a>
-
+                       <br>
+                       <a th:href="@{/sletbog(titel=${bog.getTitel()})}"><button class="btn btn-del">Delete</button></a>
 
                 </tr>
                 <br>

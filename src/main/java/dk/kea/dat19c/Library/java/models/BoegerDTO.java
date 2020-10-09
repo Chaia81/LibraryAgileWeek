@@ -4,10 +4,10 @@ public class BoegerDTO {
     private String titel;
     private String forfatter;
     private int udgivelsesaar;
-    private int ISBN;
+    private String ISBN;
     private boolean udlaansstatus;
 
-    public BoegerDTO(String titel, String forfatter, int udgivelsesaar, int ISBN, boolean udlaansstatus) {
+    public BoegerDTO(String titel, String forfatter, int udgivelsesaar, String ISBN, boolean udlaansstatus) {
         this.titel = titel;
         this.forfatter = forfatter;
         this.udgivelsesaar = udgivelsesaar;
@@ -45,11 +45,11 @@ public class BoegerDTO {
         this.udgivelsesaar = udgivelsesaar;
     }
 
-    public int getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 

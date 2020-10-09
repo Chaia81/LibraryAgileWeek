@@ -40,6 +40,8 @@ public class BoegerController {
         BoegerDTO bogtest = iboegerrepository.read(boegerDTO.getTitel());
 
         model.addAttribute("bog", bogtest);
+
+
         return "findbog";
 
     }
@@ -51,8 +53,6 @@ public class BoegerController {
             model.addAttribute("boeger", bog);
             return "sletbog";
         }
-
-
 
         @PostMapping("/sletbog")
         public String deleteForGood(@RequestParam String titel){

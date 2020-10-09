@@ -12,6 +12,8 @@ import java.util.List;
 public class BoegerRepositoryImpl implements IBoegerRepository {
 
     private Connection conn; //database?
+    private static final String DELETE_BOOKS_SQL = "DELETE FROM boeger WHERE titel =?";
+
 
 
     public BoegerRepositoryImpl() {
@@ -29,37 +31,24 @@ public class BoegerRepositoryImpl implements IBoegerRepository {
     @Override
 
     public BoegerDTO read(String titel) {
-        BoegerDTO customerToReturn = new BoegerDTO(); //normalt ville man sætte denne til null i tilfælde af den ikke fnder noget i databasen fordi så returnere metoden null
+        BoegerDTO b = new BoegerDTO(); //normalt ville man sætte denne til null i tilfælde af den ikke fnder noget i databasen fordi så returnere metoden null
         try {
-            PreparedStatement getSingleCustomer = conn.prepareStatement("SELECT * FROM boeger WHERE titel=?");
-            getSingleCustomer.setString(1, titel);
-            ResultSet rs = getSingleCustomer.executeQuery();
+            PreparedStatement getBooks = conn.prepareStatement("SELECT * FROM boeger WHERE titel=?");
+            getBooks.setString(1, titel);
+            ResultSet rs = getBooks.executeQuery();
             while (rs.next()) {
-                customerToReturn = new BoegerDTO();
-                customerToReturn.setTitel(rs.getString("titel")); //her settes en variabel med det data der er modtaget fra databasen
-
+                b = new BoegerDTO();
+                b.setTitel(rs.getString("titel")); //her settes en variabel med det data der er modtaget fra databasen
+                b.setForfatter(rs.getString(2));
+                b.setUdgivelsesaar(rs.getInt(3));
+                b.setISBN(rs.getString(4));
+                b.setUdlaansstatus(rs.getBoolean(5));
             }
         } catch (SQLException s) {
             s.printStackTrace();
         }
-        return customerToReturn; //returnere et obejct af typen customerDTO som er et DTO
+        return b; //returnere et obejct af typen customerDTO som er et DTO
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -74,7 +63,15 @@ public class BoegerRepositoryImpl implements IBoegerRepository {
     }
 
     @Override
-    public void delete(int Id) {
-
+    public void delete(String titel) {
+        try {
+            PreparedStatement prep = conn.prepareStatement(DELETE_BOOKS_SQL);
+            prep.setString(1, titel);
+            prep.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
+
 }
