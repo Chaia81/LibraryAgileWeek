@@ -16,7 +16,9 @@ public class BoegerDTO {
 
     }
 
+    public BoegerDTO() {
 
+    }
 
     public String getTitel() {
         return titel;
