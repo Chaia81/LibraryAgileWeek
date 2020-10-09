@@ -40,7 +40,7 @@ public class UdlaanRepositoryImpl implements IUdlaanRepository{
                 UdlaanDTO tempUdlaan = new UdlaanDTO();
                 tempUdlaan.setCprNR(rs.getInt(1));
                 tempUdlaan.setEmnetal(rs.getInt(2));
-                tempUdlaan.setISBN(rs.getInt(3));
+                tempUdlaan.setISBN(rs.getString(3));
                 tempUdlaan.setUdlånsdato(rs.getDate(4));
                 tempUdlaan.setAfleveringssato(rs.getDate(5));
                 allUdlaan.add(tempUdlaan);

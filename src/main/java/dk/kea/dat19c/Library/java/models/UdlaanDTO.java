@@ -5,11 +5,11 @@ import java.util.Date;
 public class UdlaanDTO {
     private int cprNR;
     private int emnetal;
-    private int ISBN;
+    private String ISBN;
     private Date udlånsdato;
     private Date afleveringssato;
 
-    public UdlaanDTO(int cprNR, int emnetal, int ISBN, Date udlånsdato, Date afleveringssato) {
+    public UdlaanDTO(int cprNR, int emnetal, String ISBN, Date udlånsdato, Date afleveringssato) {
         this.cprNR = cprNR;
         this.emnetal = emnetal;
         this.ISBN = ISBN;
@@ -37,11 +37,11 @@ public class UdlaanDTO {
         this.emnetal = emnetal;
     }
 
-    public int getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
