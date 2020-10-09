@@ -2,7 +2,7 @@ package dk.kea.dat19c.Library.java.models;
 
 import java.util.Date;
 
-public class medieDTO {
+public class MedieDTO {
     private String titel;
     private String kunster;
     private Date udgivelseår;
@@ -10,7 +10,7 @@ public class medieDTO {
     private String type;
     private boolean status;
 
-    public medieDTO(String titel, String kunster, Date udgivelseår, int emnetal, String type, boolean status) {
+    public MedieDTO(String titel, String kunster, Date udgivelseår, int emnetal, String type, boolean status) {
         this.titel = titel;
         this.kunster = kunster;
         this.udgivelseår = udgivelseår;

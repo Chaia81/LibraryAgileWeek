@@ -2,14 +2,14 @@ package dk.kea.dat19c.Library.java.models;
 
 import java.util.Date;
 
-public class udlaanDTO {
+public class UdlaanDTO {
     private int cprNR;
     private int emnetal;
     private int ISBN;
     private Date udlånsdato;
     private Date afleveringssato;
 
-    public udlaanDTO(int cprNR, int emnetal, int ISBN, Date udlånsdato, Date afleveringssato) {
+    public UdlaanDTO(int cprNR, int emnetal, int ISBN, Date udlånsdato, Date afleveringssato) {
         this.cprNR = cprNR;
         this.emnetal = emnetal;
         this.ISBN = ISBN;
