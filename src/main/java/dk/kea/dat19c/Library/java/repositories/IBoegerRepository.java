@@ -9,7 +9,7 @@ public interface IBoegerRepository{
     // CRUD operations
     public void create(BoegerDTO boegerDTO);
 
-    public BoegerDTO read(int Id);
+    public BoegerDTO read(String titel);
 
     public List<BoegerDTO> readAll();
 
