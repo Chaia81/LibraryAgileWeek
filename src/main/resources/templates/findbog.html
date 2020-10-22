@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Find Customer</title>
+</head>
+
+
+
+
+<header>
+
+</header>
+<br>
+<br>
+<div class="container">
+    <h1>Find Bog</h1>
+    <form th:action="@{/findbog}" th:object="${bog}" method="post">
+        <tr>
+            <th>Indtast titel:</th>
+            <br>
+            <input type="text" th:field="*{titel}" placeholder="Titel" />
+            <br>
+            <br>
+            <input type="submit" value="Search"/>
+        </tr>
+    </form>
+    <div>
+            <span th:if="${bog.getTitel() != 0}">
+                <br>
+                <h2>Book details</h2>
+
+
+
+                <tr>
+                    <th>Titel:</th>
+                    <span th:text="${bog.titel}"></span>
+                </tr>
+                <br>
+                   <tr>
+                    <th>Forfatter:</th>
+                    <span th:text="${bog.forfatter}"></span>
+                </tr>
+                <br>
+                <tr>
+                    <th>Udgivelsesår:</th>
+                    <span th:text="${bog.getUdgivelsesaar()}"></span>
+                </tr>
+                <br>
+                <tr>
+                    <th>ISBN:</th>
+                    <span th:text="${bog.getISBN()}"></span>
+                </tr>
+                <br>
+
+                  <tr>
+                    <th>Udlåns status:</th>
+                    <span th:text="${bog.isUdlaansstatus()} ? 'Ledig' : 'Udlånt' "></span>
+                   <span><div th:if="${bog.isUdlaansstatus()} ? 'Ledig' ">
+                       <br>
+                                    <input type="submit" value="Lån"/>
+                   </div>
+                   </span>
+
+
+
+                </tr>
+                <br>
+
+
+
+
+
+
+
+
+
+</span>
+    </div>
+</div>
+</body>
+</html>
+
